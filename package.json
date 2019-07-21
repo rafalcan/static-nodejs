@@ -1,0 +1,28 @@
+{
+  "name": "static-nodejs-server",
+  "version": "1.0.0",
+  "description": "Static NodeJS Heroku",
+  "author": "rafalcan - Rafael Gomes Alcantara",
+  "license": "MIT",
+  "engines": {
+    "node": "11.x",
+    "npm": "6.x"
+  },
+  "scripts": {
+    "start": "node --optimize_for_size --max_old_space_size=920 --gc_interval=100 backend",
+    "build": "cd frontend/ && npm install && npm run build:heroku",
+    "deploy": "git push heroku master",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "frontend/node_modules"
+  ],
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "keywords": [
+    "node",
+    "heroku"
+  ]
+}
